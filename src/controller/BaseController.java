@@ -11,6 +11,7 @@ import entity.media.Media;
  *
  * @author nguyenlm
  */
+// low coupling (data coupling) because only use method of other class
 public class BaseController {
 
     /**
