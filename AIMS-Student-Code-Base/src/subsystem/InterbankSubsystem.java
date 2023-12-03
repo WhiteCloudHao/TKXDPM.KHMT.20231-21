@@ -15,6 +15,7 @@ import subsystem.paypal.PaypalSystemController;
  * @author hieud
  *
  */
+// low coupling (data coupling) because only use method of other class
 public class InterbankSubsystem implements InterbankInterface {
 
 	/**

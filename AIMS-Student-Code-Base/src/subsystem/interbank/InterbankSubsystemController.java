@@ -16,6 +16,7 @@ import utils.Configs;
 import utils.MyMap;
 import utils.Utils;
 
+// low coupling (data coupling) because only use method of other class
 public class InterbankSubsystemController {
 
 	private static final String PUBLIC_KEY = "AQzdE8O/fR8=";

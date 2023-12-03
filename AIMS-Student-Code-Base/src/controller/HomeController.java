@@ -10,6 +10,7 @@ import entity.media.Media;
  * This class controls the flow of events in homescreen
  * @author nguyenlm
  */
+// low coupling (data coupling) because only use method of other class
 public class HomeController extends BaseController{
 
 

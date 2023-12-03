@@ -13,6 +13,7 @@ import utils.Utils;
 
 import java.util.Map;
 
+// low coupling (data coupling) because only use method of other class
 public class PaypalSystemController {
 
     private static String id;
