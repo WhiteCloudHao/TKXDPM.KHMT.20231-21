@@ -1,5 +1,6 @@
 package common.exception;;
 
+// low coupling because uncoupling
 public class InternalServerErrorException extends PaymentException {
 
 	public InternalServerErrorException() {

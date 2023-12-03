@@ -6,6 +6,7 @@ package common.exception;;
  * 
  * @author nguyenlm
  */
+ // low coupling because uncoupling
 public class AimsException extends RuntimeException {
 
     public AimsException() {

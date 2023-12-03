@@ -6,6 +6,7 @@ package common.exception;;
  * 
  * @author nguyenlm
  */
+ // low coupling because uncoupling
 public class MediaUpdateException extends AimsException {
 
 	private static final long serialVersionUID = 1091337136123906298L;
