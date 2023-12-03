@@ -2,7 +2,7 @@ package entity.invoice;
 
 import entity.order.Order;
 import org.mockito.internal.matchers.Or;
-
+//low coupling - data coupling because you should use getter, setter for urlPayOrder
 public class Invoice {
 
     private Order order;
