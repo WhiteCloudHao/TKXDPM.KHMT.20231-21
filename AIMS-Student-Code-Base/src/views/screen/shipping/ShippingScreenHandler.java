@@ -46,6 +46,7 @@ public class ShippingScreenHandler extends BaseScreenHandler implements Initiali
 
 	private Order order;
 
+	//Data Coupling
 	public ShippingScreenHandler(Stage stage, String screenPath, Order order) throws IOException {
 		super(stage, screenPath);
 		this.order = order;
