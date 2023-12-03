@@ -21,6 +21,7 @@ import subsystem.InterbankSubsystem;
  * @author hieud
  *
  */
+// low coupling (data coupling) because only use method of other class
 public class PaymentController extends BaseController {
 
 	/**

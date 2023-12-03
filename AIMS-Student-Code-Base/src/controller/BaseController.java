@@ -10,6 +10,7 @@ import entity.media.Media;
  * This class is the base controller for our AIMS project
  * @author nguyenlm
  */
+// low coupling (data coupling) because only use method of other class
 public class BaseController {
     
     /**
