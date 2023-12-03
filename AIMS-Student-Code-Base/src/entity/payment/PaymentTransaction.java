@@ -1,5 +1,5 @@
 package entity.payment;
-
+//low coupling - data coupling 
 public class PaymentTransaction {
 	private String errorCode;
 	private CreditCard card;

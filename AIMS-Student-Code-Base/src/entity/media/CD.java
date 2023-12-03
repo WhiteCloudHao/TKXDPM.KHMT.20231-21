@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
-
+//low coupling - data coupling due to getMediaById querying sql data directly
 public class CD extends Media {
 
     String artist;
