@@ -59,6 +59,7 @@ public class InvoiceScreenHandler extends BaseScreenHandler {
 
     private Invoice invoice;
 
+    //Data coupling
     public InvoiceScreenHandler(Stage stage, String screenPath, Invoice invoice) throws IOException {
         super(stage, screenPath);
         this.invoice = invoice;
@@ -98,12 +99,12 @@ public class InvoiceScreenHandler extends BaseScreenHandler {
             if (Runtime.getRuntime().exec(new String[]{"which", "xdg-open"}).getInputStream().read() != -1) {
                 Runtime.getRuntime().exec(new String[]{"xdg-open", url});
             }
-
-//            System.out.println(Desktop.isDesktopSupported());
-//            Desktop.getDesktop().browse(new URI(url));
+            //Window
+            //Desktop.getDesktop().browse(new URI(url));
         } catch (Exception e) {
             e.printStackTrace();
         }
+        //content coupling
         BaseScreenHandler paymentScreen = new PaymentScreenHandler(this.stage, Configs.PAYMENT_SCREEN_PATH, invoice);
         paymentScreen.setBController(new PaymentController());
         paymentScreen.setPreviousScreen(this);
