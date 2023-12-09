@@ -49,6 +49,24 @@ This is a Capstone's source code for Software Design and Construction project
 
 </details>
 
----
+<details>
+  <summary>W12: 05/12/2023~12/12/2023 </summary>
+
+<details>
+<summary>Hoàng Đức Thành 20204689</summary>
+<br>
+
+- Assigned tasks:
+  - Discover cohesion PlaceOrderController
+
+- Implementation details:
+  - Pull Request(s): [PR#7](https://github.com/WhiteCloudHao/TKXDPM.KHMT.20231-21/pull/7)
+</details>
+
+</details>
+
+
+
+
 
 
