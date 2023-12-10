@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 import entity.db.AIMSDB;
-
+//low coupling - data coupling due to getMediaById querying sql data directly
 public class Book extends Media {
 
     String author;

@@ -1,7 +1,7 @@
 package entity.payment;
 
 import java.sql.Timestamp;
-
+//low coupling - data coupling because CreditCard is using java.sql.Timestamp directly.
 public class CreditCard {
 	private String cardCode;
 	private String owner;

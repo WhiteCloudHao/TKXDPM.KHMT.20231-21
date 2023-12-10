@@ -6,7 +6,7 @@ import java.util.List;
 
 import common.exception.MediaNotAvailableException;
 import entity.media.Media;
-
+// low coupling (data coupling) because only use method of other calss
 public class Cart {
     
     private List<CartMedia> lstCartMedia;
