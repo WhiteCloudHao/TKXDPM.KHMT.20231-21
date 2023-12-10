@@ -6,6 +6,12 @@ package common.exception;;
  * 
  * @author nguyenlm
  */
+
+ /**
+ Coupling : Low coupling because it seems self-contained and doesn't rely on other classes. 
+
+ Cohesion: High cohesion, focusing on the representation of exceptions. 
+ */
 public class AimsException extends RuntimeException {
 
     public AimsException() {

@@ -6,6 +6,13 @@ package common.exception;
  * 
  * @author nguyenlm
  */
+
+ /**
+
+Coupling: The class has moderate coupling with the RuntimeException Java exception hierarchy.
+
+Cohesion: The class exhibits high cohesion as it is focused on representing exceptions related to place order.
+ */
 public class PlaceOrderException extends AimsException {
 
 	private static final long serialVersionUID = 1091337136123906298L;
