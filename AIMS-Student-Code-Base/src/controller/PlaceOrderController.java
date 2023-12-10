@@ -23,6 +23,7 @@ import views.screen.popup.PopupScreen;
  * @author nguyenlm
  */
 // low coupling (data coupling) because only use method of other class
+//    Procedural Cohesion  because methods: maxWeigh, validateAddress, validateName, validatePhoneNumber, validatePhoneNumber related because executed in sequence, they should place in other class, example all validate should place in other class
 // cohesion: procedural cohesion 
 //(các method validatePhonenumber, validateName, validateAddress, caculator cần chuyển sang class khác DeliveryValidator)
 public class PlaceOrderController extends BaseController{

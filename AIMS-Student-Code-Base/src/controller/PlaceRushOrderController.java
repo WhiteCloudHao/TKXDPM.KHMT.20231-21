@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 
 // low coupling (data coupling) because only use method of other class
+// function cohensive
 public class PlaceRushOrderController extends PlaceOrderController{
 
     public boolean checkSupportedPlaceRushOrder(Media media) {

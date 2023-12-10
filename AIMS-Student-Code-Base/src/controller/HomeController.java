@@ -11,6 +11,8 @@ import entity.media.Media;
  * @author nguyenlm
  */
 // low coupling (data coupling) because only use method of other class
+// function cohensive because all methods are have the same purpose for controll view
+
 public class HomeController extends BaseController{
 
 
