@@ -3,6 +3,7 @@ package subsystem.interbank;
 import common.exception.UnrecognizedException;
 import utils.API;
 
+// function cohensive
 public class InterbankBoundary {
 
 	String query(String url, String data) {

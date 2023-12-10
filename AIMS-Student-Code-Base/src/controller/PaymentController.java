@@ -22,6 +22,8 @@ import subsystem.InterbankSubsystem;
  *
  */
 // low coupling (data coupling) because only use method of other class
+// Procedural Cohesion  because method getExpirationDate executed in sequence, and it should place in class Card
+
 public class PaymentController extends BaseController {
 
 	/**

@@ -12,6 +12,7 @@ import entity.cart.CartMedia;
  * @author nguyenlm
  */
 // low coupling (data coupling) because only use method of other class
+// function cohensive
 public class ViewCartController extends BaseController{
     
     /**

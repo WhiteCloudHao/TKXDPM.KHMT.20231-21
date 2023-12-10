@@ -12,6 +12,8 @@ import entity.payment.PaymentTransaction;
  * @author hieud
  * 
  */
+
+// logic Cohesion: because methods paypalPayOrder just relate because logic payment, it should place in other class and implement payorder method of interfade
 public interface InterbankInterface {
 
 	/**
