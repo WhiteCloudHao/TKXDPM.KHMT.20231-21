@@ -4,12 +4,11 @@ This is a Capstone's source code for Software Design and Construction project
 
 ## Team member
 
-| Name            | Role        |
-| :-------------  | :---------- |
-| Phan Đức Thịnh  | Team Leader |
-| Hoàng Đức Thành | Member      |
-| Tạ Tiến Thành   | Member      |
-| Mai Văn Tiến    | Member      |
+| Name           | Role        |
+| :------------- | :---------- |
+| Lê Thanh Giang | Team Leader |
+| Nguyễn Văn A   | Member      |
+| Nguyễn Văn B   | Member      |
 
 ## Report Content
 
@@ -23,13 +22,9 @@ This is a Capstone's source code for Software Design and Construction project
 - Assigned tasks:
   - Task 1 coupling controller folder
   - Task 2 coupling subsystem folder
-  - ...
 
 - Implementation details:
-  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
-  - Specific implementation details:
-    - Describe specific in detail what you did last week
-    - You can attach images if you want
+  - Pull Request(s):
 
 </details>
 
@@ -39,17 +34,32 @@ This is a Capstone's source code for Software Design and Construction project
 
 - Assigned tasks:
   - Task 1 coupling view folder
-  - Task 2
-  - ...
+- Implementation details:
+  - Pull Request(s): 
+
+
+</details>
+
+</details>
+
+<details>
+  <summary>W12: 05/12/2023~12/12/2023 </summary>
+<br>
+<details>
+<summary>Phan Đức Thịnh 20204693</summary>
+<br>
+
+- Assigned tasks:
+  - Task 1 cohensive controller folder
+  - Task 2 cohensive subsystem folder
+
 
 - Implementation details:
-  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
-  - Specific implementation details:
-    - Describe specific in detail what you did last week
-    - You can attach images if you want
-
+  - Pull Request(s): 
 </details>
 
 </details>
 
 ---
+
+
