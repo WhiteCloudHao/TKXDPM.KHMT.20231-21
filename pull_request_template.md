@@ -6,9 +6,10 @@ This is a Capstone's source code for Software Design and Construction project
 
 | Name           | Role        |
 | :------------- | :---------- |
-| Lê Thanh Giang | Team Leader |
-| Nguyễn Văn A   | Member      |
-| Nguyễn Văn B   | Member      |
+| Phan Đức Thịnh | Team Leader |
+| Hoàng Đức Thành   | Member      |
+| Tạ Tiến Thành   | Member      |
+| Mai Văn Tiến   | Member      |
 
 ## Report Content
 
@@ -21,10 +22,13 @@ This is a Capstone's source code for Software Design and Construction project
 
 - Assigned tasks:
   - Task 1 coupling controller folder
-  - Task 2 coupling subsystem folder
+  
 
 - Implementation details:
-  - Pull Request(s):
+  - Pull Request(s): [PR](https://github.com/WhiteCloudHao/TKXDPM.KHMT.20231-21/pull/5)
+  - Specific implementation details:
+    - Describe specific in detail what you did last week
+    - You can attach images if you want
 
 </details>
 
@@ -34,9 +38,12 @@ This is a Capstone's source code for Software Design and Construction project
 
 - Assigned tasks:
   - Task 1 coupling view folder
-- Implementation details:
-  - Pull Request(s): 
 
+- Implementation details:
+  - Pull Request(s): [PR](https://github.com/WhiteCloudHao/TKXDPM.KHMT.20231-21/pull/4)
+  - Specific implementation details:
+    - Describe specific in detail what you did last week
+    - You can attach images if you want
 
 </details>
 
@@ -44,22 +51,44 @@ This is a Capstone's source code for Software Design and Construction project
 
 <details>
   <summary>W12: 05/12/2023~12/12/2023 </summary>
-<br>
 <details>
-<summary>Phan Đức Thịnh 20204693</summary>
+<summary>Phan Đức Thịnh</summary>
 <br>
 
 - Assigned tasks:
-  - Task 1 cohensive controller folder
-  - Task 2 cohensive subsystem folder
-
+  - Discover cohesion folder controller and folder subsystem
 
 - Implementation details:
-  - Pull Request(s): 
+</details>
+
+<details>
+<summary>Hoàng Đức Thành 20204689</summary>
+<br>
+
+- Assigned tasks:
+  - Discover cohesion PlaceOrderController
+
+- Implementation details:
+  - Pull Request(s): [PR#7](https://github.com/WhiteCloudHao/TKXDPM.KHMT.20231-21/pull/7)
+</details>
+
+</details>
+<details>
+  <summary>W13: 13/12/2023~20/12/2023 </summary>
+<details>
+<summary>Phan Đức Thịnh</summary>
+<br>
+
+- Assigned tasks:
+  - Discover solid folder controller
+
+- Implementation details:
 </details>
 
 </details>
 
----
+
+
+
 
 
