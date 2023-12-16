@@ -51,6 +51,15 @@ This is a Capstone's source code for Software Design and Construction project
 
 <details>
   <summary>W12: 05/12/2023~12/12/2023 </summary>
+<details>
+<summary>Phan Đức Thịnh</summary>
+<br>
+
+- Assigned tasks:
+  - Discover cohesion folder controller and folder subsystem
+
+- Implementation details:
+</details>
 
 <details>
 <summary>Hoàng Đức Thành 20204689</summary>
@@ -61,6 +70,19 @@ This is a Capstone's source code for Software Design and Construction project
 
 - Implementation details:
   - Pull Request(s): [PR#7](https://github.com/WhiteCloudHao/TKXDPM.KHMT.20231-21/pull/7)
+</details>
+
+</details>
+<details>
+  <summary>W13: 13/12/2023~20/12/2023 </summary>
+<details>
+<summary>Phan Đức Thịnh</summary>
+<br>
+
+- Assigned tasks:
+  - Discover solid folder controller
+
+- Implementation details:
 </details>
 
 </details>
