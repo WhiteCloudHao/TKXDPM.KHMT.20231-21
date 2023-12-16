@@ -26,6 +26,7 @@ import views.screen.popup.PopupScreen;
 //    Procedural Cohesion  because methods: maxWeigh, validateAddress, validateName, validatePhoneNumber, validatePhoneNumber related because executed in sequence, they should place in other class, example all validate should place in other class
 // cohesion: procedural cohesion 
 //(các method validatePhonenumber, validateName, validateAddress, caculator cần chuyển sang class khác DeliveryValidator)
+//  Violate Single Responsibility Principle because processDeliveryInfo, maxWeigh, validateName, validateAddress, validatePhoneNumber, validateDeliveryInfo not is main purpose of PlaceOrderController, they should in other class
 public class PlaceOrderController extends BaseController{
 
     private InterbankInterface interbankInterface;
