@@ -12,6 +12,7 @@ import entity.media.Media;
  */
 // low coupling (data coupling) because only use method of other class
 // coincedental cohensive because both of checkMediaInCart and getListCartMedia are not used by all other controller
+//  Violate Liskov Substitution Principle because Not every subclass needs to checkMediaInCart and getListCartMedia
 public class BaseController {
     
     /**
