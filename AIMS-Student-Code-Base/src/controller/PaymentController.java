@@ -91,7 +91,9 @@ public class PaymentController extends BaseController {
 		try {
 			this.card = new CreditCard(cardNumber, cardHolderName, Integer.parseInt(securityCode),
 					getExpirationDate(expirationDate));
-
+			//if init directly InterbankSubsystem in PaymentController, it will be tightly coupled with InterbankSubsystem
+			//so violation of principles Dependency Inversion Principle
+			//Refactor: move InterbankSubsystem to parameter of constructor
 			this.interbank = new InterbankSubsystem();
 //			PaymentTransaction transaction = interbank.payOrder(card, amount, contents);
 			PaymentTransaction transaction = interbank.paypalPayOrder(amount,contents);
