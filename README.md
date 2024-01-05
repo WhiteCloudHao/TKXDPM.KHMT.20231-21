@@ -85,7 +85,21 @@ This is a Capstone's source code for Software Design and Construction project
 - Implementation details:
 </details>
 
+<details>
+<summary>Hoàng Đức Thành 20204689</summary>
+<br>
+
+- Assigned tasks:
+  - detect solid violation PaymentCOntroller
+
+- Implementation details:
+  - Pull Request(s): [PR#12](https://github.com/WhiteCloudHao/TKXDPM.KHMT.20231-21/pull/12)
 </details>
+
+</details>
+- LƯU Ý (AGENT)
+- Đối với các useCase bài tập nhóm:
+Do các branch feature code(đối với các usecase khác, các nhánh rất khác nhau và khác code base nên bọn em chỉ tạo pull request mà không merge vào nhánh chính để không ảnh hưởng đến bài tập khác, chúng em rất xin lỗi vì sự bất tiện này đối với cô và anh Ta.)
 
 
 
