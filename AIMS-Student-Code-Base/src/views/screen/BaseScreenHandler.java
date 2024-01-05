@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 import views.screen.home.HomeScreenHandler;
 
 public class BaseScreenHandler extends FXMLScreenHandler {
-
+	private String previousScreenTitle;
 	private Scene scene;
 	private BaseScreenHandler prev;
 	protected final Stage stage;
@@ -46,7 +46,9 @@ public class BaseScreenHandler extends FXMLScreenHandler {
 	}
 
 	public void setScreenTitle(String string) {
+
 		this.stage.setTitle(string);
+		this.previousScreenTitle = string;
 	}
 
 	public void setBController(BaseController bController){
@@ -63,6 +65,9 @@ public class BaseScreenHandler extends FXMLScreenHandler {
 
 	public void setHomeScreenHandler(HomeScreenHandler HomeScreenHandler) {
 		this.homeScreenHandler = HomeScreenHandler;
+	}
+	public String getPreviousScreenTitle() {
+		return this.previousScreenTitle;
 	}
 
 }

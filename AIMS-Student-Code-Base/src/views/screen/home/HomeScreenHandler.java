@@ -32,6 +32,7 @@ import javafx.stage.Stage;
 import utils.Configs;
 import utils.Utils;
 import views.screen.BaseScreenHandler;
+import views.screen.admin.AdminScreenHandler;
 import views.screen.cart.CartScreenHandler;
 
 
@@ -47,6 +48,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
 
     @FXML
     private ImageView cartImage;
+    @FXML private ImageView adminImage;
 
     @FXML
     private VBox vboxMedia1;
@@ -116,6 +118,21 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
                 throw new ViewCartException(Arrays.toString(e1.getStackTrace()).replaceAll(", ", "\n"));
             }
         });
+        adminImage.setOnMouseClicked(e -> {
+            AdminScreenHandler adminScreen;
+            try {
+                LOGGER.info("Clicked to view admin screen");
+                adminScreen = new AdminScreenHandler(this.stage, Configs.ADMIN_SCREEN_PATH);
+                adminScreen.setHomeScreenHandler(this);
+                adminScreen.setScreenTitle("Admin Screen");
+                adminScreen.setImage();
+//        		adminScreen.setBController(new AdminController());
+                adminScreen.requestToViewAdminScreen(this);
+
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        });
         addMediaHome(this.homeItems);
         addMenuItem(0, "Book", splitMenuBtnSearch);
         addMenuItem(1, "DVD", splitMenuBtnSearch);
@@ -131,6 +148,9 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
         File file2 = new File(Configs.IMAGE_PATH + "/" + "cart.png");
         Image img2 = new Image(file2.toURI().toString());
         cartImage.setImage(img2);
+        File file3 = new File(Configs.IMAGE_PATH + "/" + "admin.png");
+        Image img3 = new Image(file3.toURI().toString());
+        adminImage.setImage(img3);
     }
 
     public void addMediaHome(List items){

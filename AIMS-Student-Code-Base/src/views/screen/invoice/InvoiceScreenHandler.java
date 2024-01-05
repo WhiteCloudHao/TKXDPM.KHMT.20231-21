@@ -96,11 +96,11 @@ public class InvoiceScreenHandler extends BaseScreenHandler {
         String url = invoice.getUrlPayOrder();
         try {
             // Workaround for Linux because "Desktop.getDesktop().browse()" doesn't work on some Linux implementations
-            if (Runtime.getRuntime().exec(new String[]{"which", "xdg-open"}).getInputStream().read() != -1) {
-                Runtime.getRuntime().exec(new String[]{"xdg-open", url});
-            }
-            //Window
-            //Desktop.getDesktop().browse(new URI(url));
+//            if (Runtime.getRuntime().exec(new String[]{"which", "xdg-open"}).getInputStream().read() != -1) {
+//                Runtime.getRuntime().exec(new String[]{"xdg-open", url});
+//            }
+//            Window
+            Desktop.getDesktop().browse(new URI(url));
         } catch (Exception e) {
             e.printStackTrace();
         }
