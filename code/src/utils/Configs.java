@@ -50,10 +50,8 @@ public class Configs {
 	public static final String HOME_PATH  = "/views/fxml/home.fxml";
 	public static final String HOME_MEDIA_PATH = "/views/fxml/media_home.fxml";
 	public static final String POPUP_PATH = "/views/fxml/popup.fxml";
-	public static final String POPUP_RUSH_SHIPPING_PATH = "/views/fxml/popup_rushshipping.fxml";
-	public static final String ADMIN_SCREEN_PATH = "/views/fxml/admin.fxml";
-	public static final String CONFIRM_ORDER_SCREEN_PATH = "/views/fxml/confirm_order.fxml";
-	
+	public static final String INVOICE_LIST_PATH = "/views/fxml/invoice_list.fxml";
+
 	public static Font REGULAR_FONT = Font.font("Segoe UI", FontWeight.NORMAL, FontPosture.REGULAR, 24);
 
 	public static String[] PROVINCES = { "Bắc Giang", "Bắc Kạn", "Cao Bằng", "Hà Giang", "Lạng Sơn", "Phú Thọ",

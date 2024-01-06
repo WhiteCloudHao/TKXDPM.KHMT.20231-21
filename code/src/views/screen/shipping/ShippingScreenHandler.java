@@ -55,11 +55,11 @@ public class ShippingScreenHandler extends BaseScreenHandler implements Initiali
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		final BooleanProperty firstTime = new SimpleBooleanProperty(true); // Variable to store the focus on stage load
 		name.focusedProperty().addListener((observable,  oldValue,  newValue) -> {
-            if(newValue && firstTime.get()){
-                content.requestFocus(); // Delegate the focus to container
-                firstTime.setValue(false); // Variable value changed for future references
-            }
-        });
+			if(newValue && firstTime.get()){
+				content.requestFocus(); // Delegate the focus to container
+				firstTime.setValue(false); // Variable value changed for future references
+			}
+		});
 		this.province.getItems().addAll(Configs.PROVINCES);
 	}
 
@@ -75,24 +75,26 @@ public class ShippingScreenHandler extends BaseScreenHandler implements Initiali
 		messages.put("province", province.getValue());
 		try {
 			// process and validate delivery info
-//			getBController().processDeliveryInfo(messages);
+			getBController().processDeliveryInfo(messages);
 		} catch (InvalidDeliveryInfoException e) {
+			PopupScreen.error(e.getMessage());
 			throw new InvalidDeliveryInfoException(e.getMessage());
 		}
-	
+
 		// calculate shipping fees
-//		int shippingFees = getBController().calculateShippingFee(order);
-//		order.setShippingFees(shippingFees);
-//		order.setDeliveryInfo(messages);
-		
+		order.setDeliveryInfo(messages);
+		int shippingFees = getBController().calculateShippingFee(order);
+		order.setShippingFees(shippingFees);
+		order.saveOrder();
+
 		// create invoice screen
-//		Invoice invoice = getBController().createInvoice(order);
-//		BaseScreenHandler InvoiceScreenHandler = new InvoiceScreenHandler(this.stage, Configs.INVOICE_SCREEN_PATH, invoice);
-//		InvoiceScreenHandler.setPreviousScreen(this);
-//		InvoiceScreenHandler.setHomeScreenHandler(homeScreenHandler);
-//		InvoiceScreenHandler.setScreenTitle("Invoice Screen");
-//		InvoiceScreenHandler.setBController(getBController());
-//		InvoiceScreenHandler.show();
+		Invoice invoice = getBController().createInvoice(order);
+		BaseScreenHandler InvoiceScreenHandler = new InvoiceScreenHandler(this.stage, Configs.INVOICE_SCREEN_PATH, invoice);
+		InvoiceScreenHandler.setPreviousScreen(this);
+		InvoiceScreenHandler.setHomeScreenHandler(homeScreenHandler);
+		InvoiceScreenHandler.setScreenTitle("Invoice Screen");
+		InvoiceScreenHandler.setBController(getBController());
+		InvoiceScreenHandler.show();
 	}
 
 	public PlaceOrderController getBController(){

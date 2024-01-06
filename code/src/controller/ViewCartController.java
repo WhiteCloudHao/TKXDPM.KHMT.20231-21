@@ -3,21 +3,21 @@ package controller;
 import java.sql.SQLException;
 import java.util.List;
 
-import entity.invoice.Invoice;
 import entity.media.Media;
 import entity.cart.Cart;
 import entity.cart.CartMedia;
-import entity.order.Order;
 
 /**
  * This class controls the flow of events when users view the Cart
  * @author nguyenlm
  */
+//funtional cohesion
 public class ViewCartController extends BaseController{
     
     /**
      * This method checks the available products in Cart
      * @throws SQLException
+     * Data Coupling
      */
     public void checkAvailabilityOfProduct() throws SQLException{
         Cart.getCart().checkAvailabilityOfProduct();
@@ -26,13 +26,11 @@ public class ViewCartController extends BaseController{
     /**
      * This method calculates the cart subtotal
      * @return subtotal
+     * Data Coupling
      */
     public int getCartSubtotal(){
         int subtotal = Cart.getCart().calSubtotal();
         return subtotal;
-    }
-    public Invoice createInvoice() {
-        return new Invoice(Cart.getCart().getListMedia());
     }
 
 }

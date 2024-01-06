@@ -45,7 +45,7 @@ public class MediaInvoiceScreenHandler extends FXMLScreenHandler{
     public MediaInvoiceScreenHandler(String screenPath) throws IOException{
         super(screenPath);
     }
-
+    //data coupling
     public void setOrderMedia(OrderMedia orderMedia) throws SQLException{
         this.orderMedia = orderMedia;
         setMediaInfo();
@@ -60,6 +60,5 @@ public class MediaInvoiceScreenHandler extends FXMLScreenHandler{
 		image.setFitHeight(90);
 		image.setFitWidth(83);
     }
-    
-    
+
 }

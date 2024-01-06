@@ -16,10 +16,15 @@ import views.screen.BaseScreenHandler;
 
 
 public class PopupScreen extends BaseScreenHandler{
-    @FXML ImageView tickicon;
+    
 
-    @FXML Label message;
+    @FXML
+    ImageView tickicon;
 
+    @FXML
+    Label message;
+
+    
     public PopupScreen(Stage stage) throws IOException{
         super(stage, Configs.POPUP_PATH);
     }
@@ -34,6 +39,10 @@ public class PopupScreen extends BaseScreenHandler{
 
     public static void success(String message) throws IOException{
         popup(message, Configs.IMAGE_PATH + "/" + "tickgreen.png", true).show(true);
+    }
+
+    public static void success(String message,double time) throws IOException{
+        popup(message, Configs.IMAGE_PATH + "/" + "tickgreen.png", true).show(true, time);
     }
 
     public static void error(String message) throws IOException{
@@ -51,6 +60,11 @@ public class PopupScreen extends BaseScreenHandler{
     public void show(Boolean autoclose) {
         super.show();
         if (autoclose) close(0.8);
+    }
+
+    public void show(Boolean autoclose, double time) {
+        super.show();
+        if (autoclose) close(time);
     }
 
     public void show(double time) {

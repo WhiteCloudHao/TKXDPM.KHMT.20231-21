@@ -25,6 +25,7 @@ public class AIMSDB {
         } 
         return connect;
     }
+    
 
     public static void main(String[] args) {
         AIMSDB.getConnection();

@@ -16,19 +16,22 @@ import utils.Utils;
  * @author nguyenlm
  */
 public class Media {
+
     private static Logger LOGGER = Utils.getLogger(Media.class.getName());
 
     protected Statement stm;
     protected int id;
     protected String title;
     protected String category;
-    protected int value; // the real price of product
-    protected int price; // the price which will be displayed on browser
+    protected int value; // the real price of product (eg: 450)
+    protected int price; // the price which will be displayed on browser (eg: 500)
     protected int quantity;
     protected String type;
     protected String imageURL;
-    protected boolean isSupportRushShipping;
-    protected int weight;
+
+    protected  boolean isSupportedPlaceRushOrder = new Random().nextBoolean();
+
+    protected double weigh = (new Random().nextDouble() * 0.9) + 0.1;
 
     public Media() throws SQLException{
         stm = AIMSDB.getConnection().createStatement();
@@ -41,9 +44,11 @@ public class Media {
         this.price = price;
         this.quantity = quantity;
         this.type = type;
+
+        //stm = AIMSDB.getConnection().createStatement();
     }
 
-    public int getQuantity() throws SQLException {
+    public int getQuantity() throws SQLException{
         int updated_quantity = getMediaById(id).quantity;
         this.quantity = updated_quantity;
         return updated_quantity;
@@ -54,6 +59,7 @@ public class Media {
         Statement stm = AIMSDB.getConnection().createStatement();
         ResultSet res = stm.executeQuery(sql);
 		if(res.next()) {
+
             return new Media()
                 .setId(res.getInt("id"))
                 .setTitle(res.getString("title"))
@@ -79,10 +85,6 @@ public class Media {
                 .setMediaURL(res.getString("imageUrl"))
                 .setPrice(res.getInt("price"))
                 .setType(res.getString("type"));
-            int weight = new Random().nextInt(5) + 1;
-            boolean isRush = new Random().nextBoolean();
-            media.setWeight(weight);
-            media.setSupportRushShipping(isRush);
             medium.add(media);
         }
         return medium;
@@ -127,7 +129,7 @@ public class Media {
     }
 
     public int getPrice() {
-        return this.price * 100;
+        return this.price;
     }
 
     public Media setPrice(int price) {
@@ -158,20 +160,16 @@ public class Media {
         return this;
     }
 
-    public boolean isSupportRushShipping() {
-        return isSupportRushShipping;
+    public  boolean getIsSupportedPlaceRushOrder() {
+        return this.isSupportedPlaceRushOrder;
     }
 
-    public void setSupportRushShipping(boolean supportRushShipping) {
-        isSupportRushShipping = supportRushShipping;
-    }
+    public  void setIsSupportedPlaceRushOrder(boolean b) { this.isSupportedPlaceRushOrder = b; }
 
-    public int getWeight() {
-        return weight;
-    }
+    public double getWeigh(){ return  this.weigh;}
 
-    public void setWeight(int weight) {
-        this.weight = weight;
+    public void setWeigh(double weigh) {
+        this.weigh = weigh;
     }
 
     @Override

@@ -11,11 +11,8 @@ import common.exception.MediaNotAvailableException;
 import common.exception.PlaceOrderException;
 import controller.PlaceOrderController;
 import controller.ViewCartController;
-import entity.cart.Cart;
 import entity.cart.CartMedia;
-import entity.invoice.Invoice;
 import entity.order.Order;
-import entity.shipping.DeliveryInfo;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -26,29 +23,36 @@ import javafx.stage.Stage;
 import utils.Configs;
 import utils.Utils;
 import views.screen.BaseScreenHandler;
-import views.screen.invoice.InvoiceScreenHandler;
 import views.screen.popup.PopupScreen;
+import views.screen.shipping.ShippingScreenHandler;
 
 public class CartScreenHandler extends BaseScreenHandler {
 
 	private static Logger LOGGER = Utils.getLogger(CartScreenHandler.class.getName());
 
-	@FXML private ImageView aimsImage;
+	@FXML
+	private ImageView aimsImage;
 
-	@FXML private Label pageTitle;
+	@FXML
+	private Label pageTitle;
 
-	@FXML VBox vboxCart;
+	@FXML
+	VBox vboxCart;
 
-	@FXML private Label shippingFees;
+	@FXML
+	private Label shippingFees;
 
-	@FXML private Label labelAmount;
+	@FXML
+	private Label labelAmount;
 
-	@FXML private Label labelSubtotal;
+	@FXML
+	private Label labelSubtotal;
 
-	@FXML private Label labelVAT;
+	@FXML
+	private Label labelVAT;
 
-	@FXML private Button btnPlaceOrder;
-	
+	@FXML
+	private Button btnPlaceOrder;
 
 	public CartScreenHandler(Stage stage, String screenPath) throws IOException {
 		super(stage, screenPath);
@@ -60,7 +64,6 @@ public class CartScreenHandler extends BaseScreenHandler {
 
 		// on mouse clicked, we back to home
 		aimsImage.setOnMouseClicked(e -> {
-			homeScreenHandler.setScreenTitle("Home Screen");
 			homeScreenHandler.show();
 		});
 
@@ -92,11 +95,11 @@ public class CartScreenHandler extends BaseScreenHandler {
 
 	public void requestToViewCart(BaseScreenHandler prevScreen) throws SQLException {
 		setPreviousScreen(prevScreen);
+		setScreenTitle("Cart Screen");
 		getBController().checkAvailabilityOfProduct();
 		displayCartWithMediaAvailability();
 		show();
 	}
-	
 
 	public void requestToPlaceOrder() throws SQLException, IOException {
 		try {
@@ -112,16 +115,16 @@ public class CartScreenHandler extends BaseScreenHandler {
 			// display available media
 			displayCartWithMediaAvailability();
 
-			// create invoice
-			Invoice invoice = getBController().createInvoice();
-			Order order = placeOrderController.createOrder(invoice, new DeliveryInfo());
-            
-			BaseScreenHandler invoiceScreenHandler = new InvoiceScreenHandler(this.stage, Configs.INVOICE_SCREEN_PATH, order);
-			invoiceScreenHandler.setPreviousScreen(this);
-			invoiceScreenHandler.setHomeScreenHandler(homeScreenHandler);
-			invoiceScreenHandler.setScreenTitle("Invoice Screen");
-			invoiceScreenHandler.setBController(new PlaceOrderController());
-			invoiceScreenHandler.show();
+			// create order
+			Order order = placeOrderController.createOrder();
+
+			// display shipping form
+			ShippingScreenHandler ShippingScreenHandler = new ShippingScreenHandler(this.stage, Configs.SHIPPING_SCREEN_PATH, order);
+			ShippingScreenHandler.setPreviousScreen(this);
+			ShippingScreenHandler.setHomeScreenHandler(homeScreenHandler);
+			ShippingScreenHandler.setScreenTitle("Shipping Screen");
+			ShippingScreenHandler.setBController(placeOrderController);
+			ShippingScreenHandler.show();
 
 		} catch (MediaNotAvailableException e) {
 			// if some media are not available then display cart and break usecase Place Order

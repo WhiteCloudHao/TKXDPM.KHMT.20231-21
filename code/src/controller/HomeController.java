@@ -1,11 +1,5 @@
 package controller;
 
-//low coupling (data coupling) 
-//HomeController sử dụng lớp Media để lấy danh sách tất cả các phương tiện từ cơ sở dữ liệu, nhưng cũng không có mức độ phụ thuộc cao vào Media đối với HomeController.
-
-//Liskov Substitution
-//HomeController mở rộng từ BaseController, nhưng không triển khai các phương thức checkMediaInCart và getListCartMedia từ BaseController. Điều này có thể làm cho việc thay thế BaseController bằng HomeController gây r
-
 import java.sql.SQLException;
 import java.util.List;
 
@@ -16,10 +10,26 @@ import entity.media.Media;
  * This class controls the flow of events in homescreen
  * @author nguyenlm
  */
+//funtional cohesion
 public class HomeController extends BaseController{
 
-
+    /** Phương thức này lấy tất cả các đối tượng Media từ cơ sở dữ liệu và trả về chúng.
+     * VI PHẠM NGUYÊN TẮC SOLID:
+     * - VI PHẠM Single Responsibility Principle (Nguyên tắc đơn trách nhiệm):
+     *   + Lớp này không chỉ điều khiển luồng logic mà còn trực tiếp thực hiện truy vấn cơ sở dữ liệu để lấy dữ liệu Media.
+     *   + Điều này làm cho lớp này có nhiều trách nhiệm hơn cần thiết.
+     * 
+     * - VI PHẠM Dependency Inversion Principle (Nguyên tắc đảo ngược phụ thuộc):
+     *   + Lớp HomeController tạo trực tiếp một đối tượng Media bên trong phương thức để lấy dữ liệu từ cơ sở dữ liệu.
+     *   + Điều này tạo ra mối liên kết cứng giữa HomeController và lớp Media, không tuân theo nguyên tắc đảo ngược phụ thuộc.
+     * 
+    /**
+     * this method gets all Media in DB and return back to home to display
+     * @return List[Media]
+     * @throws SQLException
+     */
     public List getAllMedia() throws SQLException{
+        // data coupling
         return new Media().getAllMedia();
     }
 
