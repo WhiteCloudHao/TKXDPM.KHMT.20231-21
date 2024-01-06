@@ -1,5 +1,7 @@
 package utils;
 
+import javafx.scene.control.Alert;
+
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -69,4 +71,11 @@ public class Utils {
 		return digest;
 	}
 
+	public static void showSuccessAlert(String message) {
+		Alert alert = new Alert(Alert.AlertType.INFORMATION);
+		alert.setTitle("Success");
+		alert.setHeaderText(null);
+		alert.setContentText(message);
+		alert.showAndWait();
+	}
 }
