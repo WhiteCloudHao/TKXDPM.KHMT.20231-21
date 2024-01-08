@@ -117,8 +117,6 @@ This is a Capstone's source code for Software Design and Construction project
 - Implementation details:
   - Pull Request(s):
   </details>
-
-</details>
 <details>
 <summary>Mai Văn Tiến 20194183</summary>
 <br>
@@ -128,6 +126,7 @@ This is a Capstone's source code for Software Design and Construction project
   - Discover cohesion folder entity
 
 - Implementation details:
+</details>
 </details>
 
 <details>
