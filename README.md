@@ -63,6 +63,21 @@ This is a Capstone's source code for Software Design and Construction project
     - You can attach images if you want
 
 </details>
+<details>
+<summary>Mai Văn Tiến 20194183</summary>
+<br>
+
+- Assigned tasks:
+
+  - Task 1 coupling entity folder
+
+- Implementation details:
+  - Pull Request(s):
+  - Specific implementation details:
+    - Describe specific in detail what you did last week
+    - You can attach images if you want
+
+</details>
 
 </details>
 
@@ -102,8 +117,18 @@ This is a Capstone's source code for Software Design and Construction project
 - Implementation details:
   - Pull Request(s):
   </details>
+<details>
+<summary>Mai Văn Tiến 20194183</summary>
+<br>
 
+- Assigned tasks:
+
+  - Discover cohesion folder entity
+
+- Implementation details:
 </details>
+</details>
+
 <details>
   <summary>W13: 13/12/2023~20/12/2023 </summary>
 <details>
