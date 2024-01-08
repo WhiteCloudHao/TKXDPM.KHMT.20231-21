@@ -130,7 +130,6 @@ This is a Capstone's source code for Software Design and Construction project
 </details>
 
 <details>
-<details>
   <summary>W13: 13/12/2023~20/12/2023 </summary>
 <details>
 <summary>Phan Đức Thịnh</summary>
