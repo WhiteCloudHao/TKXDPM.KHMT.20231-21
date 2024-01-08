@@ -145,5 +145,7 @@ This is a Capstone's source code for Software Design and Construction project
 - LƯU Ý (AGENT)
 - Đối với các useCase bài tập nhóm:
 Do các branch feature code(đối với các usecase khác, các nhánh rất khác nhau và khác code base nên bọn em chỉ tạo pull request mà không merge vào nhánh chính để không ảnh hưởng đến bài tập khác, chúng em rất xin lỗi vì sự bất tiện này đối với cô và anh Ta.)
+Đối với feature phê duyệt đơn hàng, bọn em để vào trong folder feature_duyet_don_hang, với code nằm trong folder code của folder feature_duyet_don_hang
+và tài liệu nằm trong folder pttk. 
 - Link video demo phê duyệt đơn hàng:
 https://www.youtube.com/watch?v=Rv_Y6xlIJ8Y
