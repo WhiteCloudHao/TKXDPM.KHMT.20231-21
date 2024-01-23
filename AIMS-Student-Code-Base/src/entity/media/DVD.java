@@ -1,7 +1,12 @@
 package entity.media;
 
+import entity.db.AIMSDB;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -40,6 +45,11 @@ public class DVD extends Media {
         return this;
     }
 
+    public DVD setId(int id) {
+        this.id = id;
+        return this;
+    }
+
     public String getDirector() {
         return this.director;
     }
@@ -57,6 +67,8 @@ public class DVD extends Media {
         this.runtime = runtime;
         return this;
     }
+
+
 
     public String getStudio() {
         return this.studio;
@@ -92,6 +104,51 @@ public class DVD extends Media {
     public DVD setFilmType(String filmType) {
         this.filmType = filmType;
         return this;
+    }
+
+    public void saveDVD() throws SQLException {
+        Connection connection = AIMSDB.getConnection();
+        PreparedStatement preparedStatement = null;
+        try{
+            String sql = "INSERT INTO DVD (id, discType, director, runtime, studio, subtitle, releasedDate, filmType) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, this.id);
+            preparedStatement.setString(2, this.discType);
+            preparedStatement.setString(3, this.director);
+            preparedStatement.setInt(4, this.runtime);
+            preparedStatement.setString(5, this.studio);
+            preparedStatement.setString(6, this.subtitles);
+            preparedStatement.setDate(7, new java.sql.Date(this.releasedDate.getTime()));
+            preparedStatement.setString(8, this.filmType);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        finally {
+            if (preparedStatement != null) {
+                preparedStatement.close();
+            }
+        }
+    }
+
+    public static DVD getDVDById(int id) throws SQLException {
+        Connection connection = AIMSDB.getConnection();
+        PreparedStatement statement = connection.prepareStatement("SELECT * FROM Book WHERE id = ?");
+        statement.setInt(1, id);
+        ResultSet resultSet = statement.executeQuery();
+            String title = "";
+            String category = "";
+            int price = 0;
+            int quantity = 0;
+            String type = "";
+            String discType = resultSet.getString("discType");
+            String director = resultSet.getString("director");
+            int runtime = resultSet.getInt("runtime");
+            String studio = resultSet.getString("studio");
+            String subtitles = resultSet.getString("subtitle");
+            Date releasedDate = resultSet.getDate("releasedDate");
+            String filmType = resultSet.getString("filmType");
+            return new DVD(id, title, category, price, quantity, type, discType, director, runtime, studio, subtitles, releasedDate, filmType);
     }
 
     @Override
@@ -135,7 +192,7 @@ public class DVD extends Media {
     }
 
     @Override
-    public List getAllMedia() {
+    public ArrayList getAllMedia() {
         return null;
     }
 }

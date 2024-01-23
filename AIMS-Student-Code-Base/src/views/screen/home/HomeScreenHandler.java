@@ -12,6 +12,7 @@ import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
 import common.exception.ViewCartException;
+import controller.AdminController;
 import controller.BaseController;
 import controller.HomeController;
 import controller.ViewCartController;
@@ -32,6 +33,7 @@ import javafx.stage.Stage;
 import utils.Configs;
 import utils.Utils;
 import views.screen.BaseScreenHandler;
+import views.screen.admin.AdminHandler;
 import views.screen.cart.CartScreenHandler;
 
 
@@ -62,6 +64,9 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
 
     @FXML
     private SplitMenuButton splitMenuBtnSearch;
+
+    @FXML
+    private ImageView admin;
 
     private List homeItems;
 
@@ -116,6 +121,19 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
                 throw new ViewCartException(Arrays.toString(e1.getStackTrace()).replaceAll(", ", "\n"));
             }
         });
+
+        admin.setOnMouseClicked(e -> {
+            AdminHandler adminHandler;
+            try {
+                adminHandler = new AdminHandler(this.stage, Configs.ADMIN_PATH);
+                adminHandler.setHomeScreenHandler(this);
+                adminHandler.setBController(new AdminController());
+                adminHandler.requestToAdmin(this);
+            } catch (IOException | SQLException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+
         addMediaHome(this.homeItems);
         addMenuItem(0, "Book", splitMenuBtnSearch);
         addMenuItem(1, "DVD", splitMenuBtnSearch);
@@ -131,6 +149,10 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
         File file2 = new File(Configs.IMAGE_PATH + "/" + "cart.png");
         Image img2 = new Image(file2.toURI().toString());
         cartImage.setImage(img2);
+
+        File file3 = new File(Configs.IMAGE_PATH + "/" + "admin.png");
+        Image img3 = new Image(file3.toURI().toString());
+        admin.setImage(img3);
     }
 
     public void addMediaHome(List items){
@@ -141,7 +163,6 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
         });
         while(!mediaItems.isEmpty()){
             hboxMedia.getChildren().forEach(node -> {
-                int vid = hboxMedia.getChildren().indexOf(node);
                 VBox vBox = (VBox) node;
                 while(vBox.getChildren().size()<3 && !mediaItems.isEmpty()){
                     MediaHandler media = (MediaHandler) mediaItems.get(0);

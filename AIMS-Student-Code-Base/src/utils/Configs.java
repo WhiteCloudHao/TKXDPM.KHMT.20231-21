@@ -45,6 +45,12 @@ public class Configs {
 	public static final String RESULT_SCREEN_PATH = "/views/fxml/result.fxml";
 	public static final String SPLASH_SCREEN_PATH = "/views/fxml/splash.fxml";
 	public static final String CART_SCREEN_PATH = "/views/fxml/cart.fxml";
+	public static final String ADMIN_PATH = "/views/fxml/admin.fxml";
+	public static final String ADD_MEDIA_PATH = "/views/fxml/add_media.fxml";
+	public static final String ADD_BOOK_PATH = "/views/fxml/add_book.fxml";
+	public static final String ADD_DVD_PATH = "/views/fxml/add_dvd.fxml";
+	public static final String ADD_CD_PATH = "/views/fxml/add_cd.fxml";
+	public static final String DELETE_MEDIA_PATH = "/views/fxml/delete_media.fxml";
 	public static final String SHIPPING_SCREEN_PATH = "/views/fxml/shipping.fxml";
 	public static final String CART_MEDIA_PATH = "/views/fxml/media_cart.fxml";
 	public static final String HOME_PATH  = "/views/fxml/home.fxml";

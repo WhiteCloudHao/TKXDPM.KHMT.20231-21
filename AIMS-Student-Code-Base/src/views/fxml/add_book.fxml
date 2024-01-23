@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.image.Image?>
+
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<?import javafx.scene.control.DatePicker?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+    <Label fx:id="pageTitle" layoutX="60.0" layoutY="-9.0" prefHeight="96.0" prefWidth="500.0" text="Thêm sản phẩm" textAlignment="CENTER" textFill="#5091e6">
+        <font>
+            <Font name="Segoe UI Semibold" size="42.0"/>
+        </font>
+    </Label>
+
+    <ImageView fx:id="aimsImage" fitHeight="73.0" fitWidth="73.0" layoutX="-6.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+        <Image url="@../../../assets/images/Logo.png"/>
+    </ImageView>
+
+    <VBox layoutX="50.0" layoutY="100.0" spacing="10.0">
+        <Label text="Thông tin sách" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+        <HBox spacing="10.0">
+            <Label text="Tác giả:"/>
+            <TextField fx:id="authorField"/>
+        </HBox>
+        <HBox spacing="10.0">
+            <Label text="Loại bìa:"/>
+            <ComboBox fx:id="coverTypeComboBox" prefWidth="150.0">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Hardcover"/>
+                        <String fx:value="Paperback"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+        </HBox>
+        <HBox spacing="10.0">
+            <Label text="Nhà xuất bản:"/>
+            <TextField fx:id="publisherField"/>
+        </HBox>
+        <HBox spacing="10.0">
+            <Label text="Ngày xuất bản:"/>
+            <DatePicker fx:id="publishDatePicker"/>
+        </HBox>
+        <HBox spacing="10.0">
+            <Label text="Số trang:"/>
+            <TextField fx:id="numOfPagesField"/>
+        </HBox>
+        <HBox spacing="10.0">
+            <Label text="Ngôn ngữ:"/>
+            <TextField fx:id="languageField"/>
+        </HBox>
+        <HBox spacing="10.0">
+            <Label text="Thể loại sách:"/>
+            <TextField fx:id="bookCategoryField"/>
+        </HBox>
+        <Button text="Lưu" onAction="#handleSubmit"/>
+    </VBox>
+</AnchorPane>
